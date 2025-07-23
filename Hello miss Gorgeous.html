@@ -23,7 +23,8 @@
       display: flex;
       gap: 20px;
     }
-    button {
+	
+	button {
       padding: 10px 18px;
       font-size: 15px;
       border-radius: 12px;
@@ -37,13 +38,13 @@
     #yesBtn {
       background-color: #ff99cc;
       color: white;
-      border-color: #cc6699; /* darker pink border */
-      font-size: 20px; /* start size */
+      border-color: #cc6699; /darker pink border/
+      font-size: 20px; /start size/
     }
     #noBtn {
       background-color: #cccccc;
       color: #333;
-      border-color: #666666; /* darker gray border */
+      border-color: #666666; /darker gray border/
     }
     #areYouSure {
       margin-top: 20px;
@@ -51,7 +52,7 @@
       font-family: "Comic Sans MS", cursive, sans-serif;
       color: #ff4da6;
       user-select: none;
-      display: none; /* hidden at first */
+      display: none; /hidden at first/
     }
   </style>
 </head>
@@ -59,7 +60,7 @@
   <h1>Will you be my girlfriend (づ｡◕‿‿◕｡)づ ?</h1>
   <div class="btn-container">
     <button id="yesBtn">Yas(っ´ω`c)♡</button>
-    <button id="noBtn">Nope</button>
+    <button id="noBtn">Nope</button> 
   </div>
   <div id="areYouSure"></div>
 
@@ -69,20 +70,36 @@
     const areYouSure = document.getElementById("areYouSure");
 
     const messages = [
-      "Are you sure (ﾟДﾟ) ?",
-      "Hey!!! (>人<)",
-      "Are you really sure? (*≧Д≦)",
-      "Are you really really sure? 🥺",
-      "Are you really really really sure...🥺🥺🥺"
-    ];
+  "Are you sure (ﾟДﾟ) ?",
+  "Hello ??? I'm your baby 🥺",
+  "Are you really? fr ? (*≧Д≦)",
+  "Not even a chance <(￣ ﹌ ￣)>?",
+  "I can be a good girl 👉👈",
+  "Ok fine I can be a baddie 🥵",
+  "Excuse me??? What do you want then?",
+  "I AM COMPLETELY OUTRAGED!",
+  "Shoot a price darling",
+  "How about you come to the airbnb and we re-negotiate ╰(▔∀▔)╯?",
+  "I have snack (bun bo hue) and wife 😋",
+  "I mean wine... („• ֊ •„)",
+  "Not to brag but I can perform real good massage ^^",
+  "I sincerely love you. Like, a lot 💫",
+  "Hey!!! (>人<)",
+  "Are you really sure? 🥺",
+  "Are you really really sure? 🥺🥺",
+  "Are you really really really sure...🥺🥺🥺",
+  "You think I will give up don't you? 😏",
+  "Wrong answer miss !!!",
+  "Are you really really really sure...🥺🥺🥺"
+];
 
     let noClicks = 0;
 
     noBtn.addEventListener("click", () => {
-      // Increase font size of Yes button by 2px each No click
+      // Increase font size of Yes button by 1px for each No
       const style = window.getComputedStyle(yesBtn);
       let fontSize = parseFloat(style.fontSize);
-      fontSize += 2;
+      fontSize += 1;
       yesBtn.style.fontSize = fontSize + "px";
 
       // Show "Are you sure...?" text with progressive messages
@@ -91,14 +108,14 @@
       if (noClicks < messages.length) {
         areYouSure.textContent = messages[noClicks];
       } else {
-        // For 5th click and beyond, keep last message
+        // For further click and beyond = keep last message
         areYouSure.textContent = messages[messages.length - 1];
       }
       noClicks++;
     });
 
     yesBtn.addEventListener("click", () => {
-      alert("Yay me 💖 I love you too ");
+      alert("Yayyy congratz 💖 You have just won the highest prize cutie patootie 🏩");
     });
   </script>
 </body>
